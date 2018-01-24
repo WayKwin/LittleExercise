@@ -50,17 +50,9 @@ char *my_strchr(const char*str, const char val)
 int my_strcmp(const char *str1, const char *str2)
 {
 	int ret = 0;
-	while (!(ret = *str1 - *str2) && *str1++&&*str2++);//whileÀ¨ºÅÀïÀï*str2++//Ñ­»·½áÊøstrÖ¸Ïò\0ºóÃæ
+	while (!(ret = *str1 - *str2) && *str1++&&*str2++);//whileæ‹¬å·é‡Œé‡Œ*str2++//å¾ªç¯ç»“æŸstræŒ‡å‘\0åé¢
 
-	if (ret > 0)
-	{
-		return 1;
-	}
-	else if (ret < 0)
-	{
-		return -1;
-	}
-	return 0;
+return ret>0? 1:ret==0? 0:-1;
 }
 void* my_memcopy(void*dst, const *src,int size)
 {
@@ -81,7 +73,7 @@ int main()
 {
 	char a[] = "1234";
 	char b[] ="cc";
-	char *c = (char*)my_memcopy(b, a, 4);//ÂÒÂëÊÇÒòÎª¿½±´´óÓÚB×Ö·û´®³¤¶ÈµÄ»°»á°ÑbÖĞµÄ'\0'¸²¸Çµô
+	char *c = (char*)my_memcopy(b, a, 4);//ä¹±ç æ˜¯å› ä¸ºæ‹·è´å¤§äºBå­—ç¬¦ä¸²é•¿åº¦çš„è¯ä¼šæŠŠbä¸­çš„'\0'è¦†ç›–æ‰
 	printf("%s", c);
 	//char a[] = "ab";
 	//char b[] = "abcd";
