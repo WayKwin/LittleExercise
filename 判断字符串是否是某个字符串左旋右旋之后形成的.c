@@ -1,6 +1,68 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
+//方案三
+/*
+穷举
+abcd1234abcd1234
+左旋两次
+ab cd1234ab cd1234
+cd1234ab
+*/
+void leftmoive(char*str, int n)
+{
+	assert(str);
+	int len = strlen(str);
+	n %= len;
+	char *mem = (char *)malloc(2 * len + 1);
+	strcpy(mem, str);
+	strcat(mem, str);
+	strncpy(str, mem + n, len);
+	free(mem);
+
+}
+//方案二
+//字符串逆置
+/*
+左旋四次
+abcd 1234
+dcba 4321
+1234 abcd
+
+*/
+void reverse_str(char *start, char*end)
+{
+	while (start < end)
+	{
+		*start ^= *end;
+		*end ^= *start;
+		*start ^= *end;
+		start++;
+		end--;
+	}
+}
+void leftmove1(char*str, int n)
+{
+	reverse_str(str, str + n - 1)
+	reverse_str(srt + n, str + len - 1);
+	reverse_str(str, str + len - 1);
+}
+//方案一
+void leftmove(char*str, int n)
+{
+	assert(str);
+	int len = strlen(str);
+	n %= len;
+	int i = 0;
+	char temp = str[0];
+	while (n--){
+	while (i<len-1)//最后一次 a[8]=a[9]
+	{
+		str[i] = str[i + 1];
+	}
+	}
+	str[i] = temp;
+}
 void leftTwist(char *p,int cnt)
 {
 	//左旋一次就是把最左边的字母依次移到字符串末尾
