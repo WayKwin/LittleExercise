@@ -4,13 +4,13 @@
 void List::init()
 {
 	header = new ListNode;
-	tailer = new ListNode;
+	trailer = new ListNode;
 	header->Pred = NULL;
 	header->data = 111;
-	header->Succ = tailer;
-	tailer->Pred = header;
-	tailer->Succ = NULL;
-	tailer->data = 999;
+	header->Succ = trailer;
+	trailer->Pred = header;
+	trailer->Succ = NULL;
+	trailer->data = 999;
 	_size = 0;
 }
 Node List::insertAsFrist(int data)
@@ -23,7 +23,7 @@ Node List::insertAsFrist(int data)
 Node List::insertAsLast(int data)
 {
 	_size++;
-	return tailer->insertAsPre(data);
+	return trailer->insertAsPre(data);
 }
 Node List::insertAsB(Node p, int data)
 {
