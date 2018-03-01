@@ -14,7 +14,6 @@ Node ListNode::insertAsSucc(int data)
 	Succ = x;
 	return x;
 }
-
 Node ListNode::my_insertAsPre(int data)
 {
 	Node x = new ListNode(data, Pred, this);

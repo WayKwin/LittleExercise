@@ -1,5 +1,4 @@
 #include"List.h"
-
 	int main()
 	{
 		List mylist;
@@ -14,6 +13,4 @@
 			p = p->Succ;
 		}
 		cout << p->data << endl;
-		getchar();
-
 	}

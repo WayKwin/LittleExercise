@@ -1,16 +1,15 @@
 #include"List.h"
 //当前节点前插入,设当前节点为p
-
 void List::init()
 {
 	header = new ListNode;
-	trailer = new ListNode;
+	tailer = new ListNode;
 	header->Pred = NULL;
 	header->data = 111;
-	header->Succ = trailer;
-	trailer->Pred = header;
-	trailer->Succ = NULL;
-	trailer->data = 999;
+	header->Succ = tailer;
+	tailer->Pred = header;
+	tailer->Succ = NULL;
+	tailer->data = 999;
 	_size = 0;
 }
 Node List::insertAsFrist(int data)
@@ -23,7 +22,7 @@ Node List::insertAsFrist(int data)
 Node List::insertAsLast(int data)
 {
 	_size++;
-	return trailer->insertAsPre(data);
+	return tailer->insertAsPre(data);
 }
 Node List::insertAsB(Node p, int data)
 {
@@ -46,4 +45,16 @@ int  List::remove(Node p)
 	free(p);
 	return x;
 }
-
+void List::copyNode(Node p, int n)
+{
+	init();
+	while (n--)
+	{
+		insertAsLast(p->data);
+		p->Succ;
+	}
+}
+List::List(List const &L)
+{
+	copyNode(L.frist(), L._size);
+}
