@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CLFAGS	makefile	/^CLFAGS =-g$/;"	m
+CheckNULL	SeqList.h	9;"	d
+CheckSize	SeqList.h	11;"	d
+IncreaseCapacity	SeqList.cpp	/^int  SeqList::IncreaseCapacity()$/;"	f	class:SeqList
+OutofCapacity	SeqList.h	10;"	d
+PopBack	SeqList.cpp	/^int SeqList::PopBack()$/;"	f	class:SeqList
+PopFront	SeqList.cpp	/^int SeqList::PopFront()$/;"	f	class:SeqList
+PushBack	SeqList.cpp	/^void SeqList::PushBack(int value)$/;"	f	class:SeqList
+PushFront	SeqList.cpp	/^void SeqList::PushFront(int value)$/;"	f	class:SeqList
+SeqList	SeqList.h	/^	SeqList(){ SeqListInit(); }$/;"	f	class:SeqList
+SeqList	SeqList.h	/^class SeqList{$/;"	c
+SeqListInit	SeqList.cpp	/^void SeqList::SeqListInit()$/;"	f	class:SeqList
+SeqListInitCapacity	SeqList.h	6;"	d
+SeqListtype	SeqList.h	7;"	d
+a	SeqList.h	/^	int *a;$/;"	m	class:SeqList
+capacity	SeqList.h	/^	SeqListtype capacity;$/;"	m	class:SeqList
+insert	SeqList.cpp	/^void SeqList::insert(int key,int value)$/;"	f	class:SeqList
+main	test.cpp	/^int main()$/;"	f
+p	test.cpp	5;"	d	file:
+remove	SeqList.cpp	/^int SeqList::remove(int key)$/;"	f	class:SeqList
+s	test.cpp	/^SeqList s;$/;"	v
+showSeqList	SeqList.cpp	/^void SeqList::showSeqList()$/;"	f	class:SeqList
+size	SeqList.h	/^	SeqListtype size;$/;"	m	class:SeqList
+testFront	test.cpp	/^void testFront()$/;"	f
+testInsert_Remove	test.cpp	/^void testInsert_Remove()$/;"	f
+testPushBack	test.cpp	/^void testPushBack()$/;"	f
+~SeqList	SeqList.h	/^	~SeqList(){  }$/;"	f	class:SeqList
