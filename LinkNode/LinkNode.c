@@ -144,12 +144,34 @@ void linklistErase(linkNode** head,linkNode* pos)
     tmp->next = pos->next;
     destoryNode(&pos);
 }
-void LinkListReverse(LinkNode* head)
+void linkListErase2(linkNode** head, eleType value)
 {
-    if(*head == NULL)
+    //verywrong
+    // 赋值操作 只是把p销毁了,*head没有
+   /*linkNode* p = head;*/
+   /*destoryNode(&p);*/
+   linkNode** p = head;
+   destoryNode(p);
+}
+void  LinkListReverse(linkNode** head)
+{
+    //原地逆置
+    //如果把p->next改变,就无法通过p->next找到下一个元素,
+    //所以将p->next保存在cur中 再把p->next 指向pre
+    //同时 此时p就是下一个节点的pre pre = p
+    if(head == NULL)
         return;
-    LinkNode * pre;
-
+    linkNode * pre = NULL;
+    linkNode* cur = *head;
+    while(cur != NULL)
+    {
+        linkNode* tmp = cur;
+        cur = cur->next;
+        tmp->next = pre;
+        pre = tmp;
+    }
+    //最后pre就是Head
+    *head = pre;
 }
 void  lisadnkListPushFront(linkNode** head,eleType c)
 {

@@ -30,16 +30,38 @@ void testfind()
     /*printf("%c\n",ret->element);*/
     linkListFind(head,'g');
 }
+void testReverse()
+{
+    show;
+    initLink(&head);
+    linkListPushBack(&head,'b');
+    linkListPushBack(&head,'c');
+    linkListPushBack(&head,'d');
+    printf("逆置前链表为:\n");
+    linkListShow(head);
+    LinkListReverse(&head);
+    printf("逆置后链表为: \n");
+    linkListShow(head);
+}
+void testEarse()
+{
+    show;
+    initLink(&head);
+    linkListErase2(&head,'a');
+}
 int main()
 {
-    testinitLink();
-    testPushBack();
-    testfind();
-    /*testinsert();*/
-    if(head != NULL)
-    {
-        printf("不为空");
-    }
+    /*testinitLink();*/
+    /*testPushBack();*/
+    /*testfind();*/
+    /*[>testinsert();<]*/
+    /*if(head != NULL)*/
+    /*{*/
+        /*printf("不为空");*/
+    /*}*/
+
+    /*testReverse();*/
+    testEarse();
     linkListShow(head);
     return 0;
 }
