@@ -1,8 +1,9 @@
+#include<iostream>
 typedef int val_t;
 typedef char key_t;
 typedef struct Node
 {
-	val_t key;
+	key_t key;
 	val_t val;
 	struct Node* right;
 	struct Node* left;
@@ -14,15 +15,19 @@ typedef struct Node
 class BST
 {
 private:
-	Node root;
+	Node* root;
 	int size(Node x);
-	val_t get(Node& x, key_t key);
+	val_t get(Node* x, key_t key);
 	Node* put1(Node* x, key_t key, val_t val);
 	Node* put2(Node* x, key_t key, val_t val);
+    size_t size(Node *x);
+	Node* select(Node* x,int t);
 public:
+    BST():root(NULL){};
 	int size();
+    void show();
 	val_t get(key_t key);
 	void put(key_t key, val_t val);
-	//返回名次为t 的节点的key
-	key_t select(int t);
+    key_t select(int rank);
+
 };

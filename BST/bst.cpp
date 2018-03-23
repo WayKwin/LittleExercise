@@ -2,96 +2,135 @@
 #include<iostream>
 val_t BST::get(key_t key)
 {
-	//从根节点开始找
 	return get(root, key);
 }
-val_t BST::get(Node& x, key_t key)
+val_t BST::get(Node* x, key_t key)
 {
-	if (&x == NULL)
+	if (x == NULL)
 	{
 		return -1;
 	}
-	int cmp = (key < x.key ? -1 : key = x.key ? 0 : 1);
-	if (cmp == -1) return get(*x.left, key);
-	else if (cmp == 1) return  get(*x.right, key);
-	else return x.val;
-	
+	int cmp = (key < x->key ? -1 : key = x->key ? 0 : 1);
+	if (cmp == -1) return get(x->left, key);
+	else if (cmp == 1) return  get(x->right, key);
+	else return x->val;
 }
 void BST::put(key_t key, val_t val)
 {
-	//  私有put是一个典型的递归,从root入栈,最后从root出栈 ,因为返回值是Node类型的,也可以写成void类型
-	root = *put1(&root, key, val);
+	root = put1(root, key, val);
 }
-//递归版
+
 Node* BST::put1(Node* x, key_t key, val_t val)
 {
 	if (x == NULL)
 	{
-		Node e(key, val, 1);
-		return &e;
+        Node* node =new  Node(key,val,1);
+		return node;
 	}
-	int cmp = (x->key > key ? 1 : x->key = key ? 0 : -1);
-	//通过左右大小比较  入栈递归不断找到合适插入点
+	int cmp = (x->key > key ? 1 : x->key == key ? 0 : -1);
 	if (cmp == -1)
 		x->left = put1(x->left, key, val);
 	else if (cmp == 1)
 		x->right = put1(x->right, key, val);
-	else
+	else if (cmp == 0)
+    {
 		x->val = val;
-      x->N = x->left->N + x->right->N + 1;
-	  return x;
-}
-//迭代版 相对于 迭代版没有回溯的过程
-Node* BST::put2(Node* x, key_t key, val_t val)
-{
+        return x ;
+    }
+        //wrong 涓囦竴瀛愭爲涓虹┖灏辫В寮曠敤浜嗙┖鎸囬拡
+        //x->N = x->left->N + x->right->N + 1;
+        x->N = size(x->left) + size(x->right) + 1;
+	    return x;
 
-	while (x != NULL)
+}
+Node* BST::put2(Node* input, key_t key, val_t val)
+{
+	while (input != NULL)
 	{
-		int cmp = (x->key > key ? 1 : x->key = key ? 0 : -1);
+		int cmp = (input->key > key ? 1 : input->key = key ? 0 : -1);
 		if (cmp == 1)
 		{
-			x->N++;
-			//当x=x->right  为NULL时 也就是它右子节点为空.就找到了合适的插入点
-			x = x->right;
+			input->N++;
+			input = input->right;
 		}
-		if (cmp == -1)
+		else if (cmp == -1)
 		{
-		x->N++;
-		x=x->left;
+		input->N++;
+		input=input->left;
 		}
-		//key值相同的情况
-		else
+		else if (cmp == 0)
 		{
-			x->val = val;
+			input->val = val;
+            return root;
 		}
 	}
-	Node e(key, val, 1);
-	x = &e;
-	return &root;
+	input = new Node(key, val, 1);
+	return root;
 }
 
-key_t BST::select(int t)
+size_t BST::size(Node *x)
+    {
+        if(x == NULL)
+        {
+            return 0;
+        }
+        return x->N;
+    }
+key_t BST::select(int rank)
 {
-	Node *x=& root;
-	if (x == NULL)
-	{
-		return -1;
-	}
-	while (x!=NULL)
-	{
-		//注意NULL
-		key_t key = x->left->N;
-		if( key== t)
-		return x->N;
-		else if (key > t)
-		{
-			x = x->left;
-		}
-		else if (key < t)
-		{
-			t = t - key - 1;
-			x = x->right;
-		}
-	}
+    Node* tmp =  select(root,rank);
+    if( tmp == NULL )
+    {
+        return ' ';
+    }
+    return tmp->key;
+}
+Node* BST::select(Node *x,int t)
+{
+    if(x == NULL)
+    {
+        return NULL;
+    }
+    int cmp = t > size(x->left)? 1 : t == size(x->left)? 0 : -1;
+    if (cmp == -1)
+    {
+        return select(x->left,t);
+    }
+    if(cmp == 0)
+    {
+        return x;
+    }
+    if(cmp == 1 )
+    {
+        return select(x->right,t-x->left->N-1);
+    }
 }
 
+//int  select1(int t)
+//{
+	//Node *x= NULL;
+	//if (x == NULL)
+	//{
+		//return -1;
+	//}
+	//while (x != NULL)
+	//{
+		//key_t key = x->left->N;
+		//if( key == t)
+		//return x->left->N;
+		//else if (key > t)
+		//{
+			//x = x->left;
+		//}
+		//else if (key < t)
+		//{
+			//t = t - key - 1;
+			//x = x->right;
+		//}
+	//}
+    //return -1;
+//}
+void BST::show()
+{
+
+}
