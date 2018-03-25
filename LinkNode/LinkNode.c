@@ -11,6 +11,7 @@ typedef struct linkNode
 typedef struct link
 {
    linkNode* head;
+   linkNode* tail;
    size_t  size;
 }link;
 /*linkNode* initNode(char val)*/
@@ -129,30 +130,52 @@ void linkListInsertAfter(linkNode* pos,eleType value)
     newNode->next = pos->next;
     pos->next = newNode;
 }
-void linklistErase(linkNode** head,linkNode* pos)
+void linklistErase(linkNode** head,linkNode**  pos)
 {
-    if(pos == *head)
+    if(*pos == *head)
     {
      destoryNode(head);
      return ;
     }
-    linkNode *tmp =  *head;
-    while( tmp->next != pos)
+    linkNode** tmp =  head;
+    while( (*tmp)->next != *pos && (*tmp) != NULL)
     {
-        tmp = tmp->next;
+       (*tmp) = (*tmp)->next;
     }
-    tmp->next = pos->next;
-    destoryNode(&pos);
+    (*tmp)->next = (*pos)->next;
+    destoryNode(pos);
 }
 void linkListErase2(linkNode** head, eleType value)
 {
     //verywrong
     // 赋值操作 只是把p销毁了,*head没有
-   /*linkNode* p = head;*/
+   /*linkNode* p = *head;*/
    /*destoryNode(&p);*/
    linkNode** p = head;
    destoryNode(p);
 }
+void LinkListReverse2(linkNode* head)
+{
+    if( head == NULL )
+    {
+        return;
+    }
+    linkNode* tmp = initNode(head->element) ;
+    while(head->next != NULL)
+    {
+        tmp->next = head->next;
+        char  exch = tmp->element;
+        tmp->element = head->element;
+    }
+}
+/*void merge()*/
+/*{*/
+    /*for(;i != NULL || j != NULL)*/
+    /*{*/
+
+        /*if(i != NULL && (j == NULL) || (a[j]>a[i]))*/
+    /*}*/
+/*}*/
 void  LinkListReverse(linkNode** head)
 {
     //原地逆置
@@ -188,10 +211,17 @@ eleType linkListPopFront(linkNode** head)
     if(*head == NULL)
         return ' ';
     eleType ret = (*head)->element;
-    linkNode* oldHead = *head;
+    linkNode** oldHead =head;
     *head = (*head)->next;
-    destoryNode(&oldHead);
+    destoryNode(oldHead);
     return ret;
+}
+void printReverse(linkNode* head)
+{
+    if(head == NULL)
+        return ;
+    printReverse(head->next);
+    printf("%c ",head->element);
 }
 void linkListShow(linkNode* head)
 {
