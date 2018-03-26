@@ -248,10 +248,11 @@ void testLastKnode()
 }
 //判断是否带环
 //钟表时针分针 速度不同,肯定会相遇
-int hasCycle(linkNode* head)
+//指针 绝对速度相同的话不行
+linkNode*  hasCycle(linkNode* head)
 {
     if(head == NULL)
-        return -1;
+        return NULL;
     /*if(head->next = NULL)*/
         /*return 0;*/
     linkNode* fastNode = head;
@@ -262,9 +263,9 @@ int hasCycle(linkNode* head)
                     fastNode->next->next);
         slowNode = slowNode->next;
         if( slowNode == fastNode )
-            return 1;
+            return slowNode;
     }
-    return 0;
+    return NULL;
 }
 void testHasCycle(linkNode* head)
 {
@@ -279,6 +280,59 @@ void testHasCycle(linkNode* head)
     circle(head);
     int result = hasCycle(head);
     printf("%d\n",result);
+}
+//判断带环入口点
+// x 头到入口点
+// y  入口点到相遇点
+// s = x + y
+// 2s = x + nr(1. slow未到环 fast 进环走了N圈 2 slow到环 fast多走了N圈之后slow相与) + y;
+// x = nr - y
+// p1 走x  = p2 走 nr圈(回到原地) 再往后退Y步 就是环的入口点
+linkNode* FindEntry(linkNode* head)
+{
+    linkNode* encounter = hasCycle(head);
+    linkNode* p1 = head;
+    while(encounter != p1)
+    {
+        p1 = p1->next;
+        encounter = encounter->next;
+    }
+    return p1;
+}
+int  CircleLength(linkNode* head)
+{
+
+    int len = 1;
+    linkNode* encounter = hasCycle(head);
+    if( encounter == NULL )
+    {
+        return -1;
+    }
+    else
+    {
+        // 注意 len不能定义在这
+        while(encounter->next != encounter)
+        {
+            encounter = encounter->next;
+            ++len;
+        }
+        return len;
+    }
+}
+linkNode* Getcross(linkNode* head1, linkNode* head2)
+{
+    if( head1 == NULL || head2 == NULL)
+        return NULL;
+    linkNode* p1 = head1;
+    linkNode* p2 = head2;
+    while(p1 != NULL && p2 != NULL)
+    {
+        if( p1 == p2 )
+            return p1;
+        p1 = p1->next;
+        p2 = p2->next;
+    }
+    return NULL;
 }
 int main()
 {
