@@ -30,7 +30,7 @@ void process_create(void (*func)( char* arg[]),char *arg[] )
         default:
             {
             int status = 0;
-             waitpid(-1,&status,0);
+            waitpid(-1,&status,0);
             }
             break;
     }
