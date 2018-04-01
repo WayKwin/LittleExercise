@@ -1,4 +1,3 @@
-#pragma once
 #include<stdio.h>
 #include<stdlib.h>
 #include<stddef.h>
@@ -14,6 +13,7 @@ typedef struct link
    linkNode* tail;
    size_t  size;
 }link;
+
 /*linkNode* initNode(char val)*/
 //{
     //linkNode node;
