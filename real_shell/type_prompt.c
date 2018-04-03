@@ -29,7 +29,7 @@ void type_prompt(char * prompt)
         sprintf(prompt+len,"%s]",dir);
     len = strlen(prompt);
     //判断当前是否是root
-    if(getuid == 0)
+    if(geteuid() == 0)
         sprintf(prompt+len,"# ");
     else
         sprintf(prompt+len,"$ ");
