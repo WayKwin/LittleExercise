@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BST	BST/tree.h	/^    BST():root(NULL){};$/;"	f	class:BST
+BST	BST/tree.h	/^class BST$/;"	c
+CLFAGS	SeqList/makefile	/^CLFAGS =-g$/;"	m
+CheckNULL	SeqList/SeqList.h	6;"	d
+CheckSize	SeqList/SeqList.h	8;"	d
+CircleLength	LinkNode/test.c	/^int  CircleLength(linkNode* head)$/;"	f
+FindLastKNode	LinkNode/test.c	/^linkNode* FindLastKNode(linkNode* head,size_t k)$/;"	f
+FindMidNode	LinkNode/test.c	/^linkNode* FindMidNode(linkNode* head)$/;"	f
+IncreaseCapacity	SeqList/SeqList.cpp	/^int  SeqList::IncreaseCapacity()$/;"	f	class:SeqList
+IncreaseCapacity	SeqList/SeqList.cpp	/^int SeqList::IncreaseCapacity()$/;"	f	class:SeqList
+LinkListReverse	LinkNode/LinkNode.c	/^void  LinkListReverse(linkNode** head)$/;"	f
+LinkListReverse2	LinkNode/LinkNode.c	/^void LinkListReverse2(linkNode* head)$/;"	f
+N	BST/tree.h	/^	int N;$/;"	m	struct:Node
+Node	BST/tree.h	/^	Node(key_t key, val_t val, int N) :key(key), val(val), N(N){}$/;"	f	struct:Node
+Node	BST/tree.h	/^typedef struct Node$/;"	s
+Node	BST/tree.h	/^}Node;$/;"	t	typeref:struct:Node
+OutofCapacity	SeqList/SeqList.h	7;"	d
+PopBack	SeqList/SeqList.cpp	/^int SeqList::PopBack()$/;"	f	class:SeqList
+PopFront	SeqList/SeqList.cpp	/^int SeqList::PopFront()$/;"	f	class:SeqList
+PushBack	SeqList/SeqList.cpp	/^void SeqList::PushBack(int value)$/;"	f	class:SeqList
+PushFront	SeqList/SeqList.cpp	/^void SeqList::PushFront(int value)$/;"	f	class:SeqList
+SeqList	SeqList/SeqList.h	/^	SeqList(){ SeqListInit(); }$/;"	f	class:SeqList
+SeqList	SeqList/SeqList.h	/^class SeqList{$/;"	c
+SeqListInit	SeqList/SeqList.cpp	/^void SeqList::SeqListInit()$/;"	f	class:SeqList
+SeqListInitCapacity	SeqList/SeqList.h	4;"	d
+SeqListtype	SeqList/SeqList.h	5;"	d
+a	BST/c.cpp	/^class a$/;"	c	file:
+a	SeqList/SeqList.h	/^	int *a;$/;"	m	class:SeqList
+bubbleup	LinkNode/test.c	/^void bubbleup(linkNode* head)$/;"	f
+capacity	SeqList/SeqList.h	/^	SeqListtype capacity;$/;"	m	class:SeqList
+change	BST/c.cpp	/^    void change ()$/;"	f	class:a
+circle	LinkNode/test.c	/^void circle(linkNode *head)$/;"	f
+cmp	LinkNode/test.c	/^int cmp(const linkNode* head1,const linkNode* head2)$/;"	f
+deleteMin	BST/tree.cpp	/^Node* BST::deleteMin(Node* x)$/;"	f	class:BST
+deleteMin	BST/tree.cpp	/^void BST::deleteMin()$/;"	f	class:BST
+deleteNode	BST/tree.cpp	/^Node* BST::deleteNode(Node* x,key_t key)$/;"	f	class:BST
+deleteNode	BST/tree.cpp	/^void BST::deleteNode(key_t key)$/;"	f	class:BST
+destoryNode	LinkNode/LinkNode.c	/^void destoryNode(linkNode** node)$/;"	f
+eat	LinkNode/test.c	/^void eat(linkNode *head, int M)$/;"	f
+eleType	LinkNode/LinkNode.c	/^typedef char eleType;$/;"	t	file:
+element	LinkNode/LinkNode.c	/^    eleType element;$/;"	m	struct:linkNode	file:
+exch	sort/sort.h	2;"	d
+findEntry	LinkNode/test.c	/^linkNode* findEntry(linkNode* head)$/;"	f
+findMin	BST/tree.cpp	/^Node* BST::findMin(Node* x)$/;"	f	class:BST
+get	BST/tree.cpp	/^val_t BST::get(Node* x, key_t key)$/;"	f	class:BST
+get	BST/tree.cpp	/^val_t BST::get(key_t key)$/;"	f	class:BST
+getCrossPoint	LinkNode/test.c	/^linkNode* getCrossPoint(linkNode* head1,linkNode* head2)$/;"	f
+getCrossPoint_noncycle	LinkNode/test.c	/^linkNode* getCrossPoint_noncycle(linkNode* head1,linkNode* head2)$/;"	f
+hasCross	LinkNode/test.c	/^int hasCross(linkNode* head1,linkNode* head2)$/;"	f
+hasCross_noncycle	LinkNode/test.c	/^int hasCross_noncycle(linkNode* head1, linkNode* head2)$/;"	f
+hasCycle	LinkNode/test.c	/^linkNode*  hasCycle(linkNode* head)$/;"	f
+head	LinkNode/LinkNode.c	/^   linkNode* head;$/;"	m	struct:link	file:
+head	LinkNode/test.c	/^linkNode* head = NULL;$/;"	v
+head2	LinkNode/test.c	/^linkNode* head2 = NULL;$/;"	v
+initLink	LinkNode/LinkNode.c	/^void initLink(linkNode** head)$/;"	f
+initNode	LinkNode/LinkNode.c	/^linkNode* initNode(eleType c)$/;"	f
+insert	SeqList/SeqList.cpp	/^void SeqList::insert(int key,int value)$/;"	f	class:SeqList
+intger	BST/c.cpp	/^    int intger;$/;"	m	class:a	file:
+isEmpty	BST/tree.h	/^    int isEmpty()$/;"	f	class:BST
+key	BST/tree.h	/^	key_t key;$/;"	m	struct:Node
+key_t	BST/tree.h	/^typedef char key_t;$/;"	t
+left	BST/tree.h	/^	struct Node* left;$/;"	m	struct:Node	typeref:struct:Node::Node
+link	LinkNode/LinkNode.c	/^typedef struct link$/;"	s	file:
+link	LinkNode/LinkNode.c	/^}link;$/;"	t	typeref:struct:link	file:
+linkListErase2	LinkNode/LinkNode.c	/^void linkListErase2(linkNode** head, eleType value)$/;"	f
+linkListFind	LinkNode/LinkNode.c	/^linkNode* linkListFind(linkNode* head,eleType to_find )$/;"	f
+linkListInsert	LinkNode/LinkNode.c	/^void linkListInsert(linkNode* pos,eleType value)$/;"	f
+linkListInsertAfter	LinkNode/LinkNode.c	/^void linkListInsertAfter(linkNode* pos,eleType value)$/;"	f
+linkListPopBack	LinkNode/LinkNode.c	/^eleType linkListPopBack(linkNode** head)$/;"	f
+linkListPopFront	LinkNode/LinkNode.c	/^eleType linkListPopFront(linkNode** head)$/;"	f
+linkListPushBack	LinkNode/LinkNode.c	/^void linkListPushBack(linkNode** head,eleType e)$/;"	f
+linkListShow	LinkNode/LinkNode.c	/^void linkListShow(linkNode* head)$/;"	f
+linkNode	LinkNode/LinkNode.c	/^typedef struct linkNode$/;"	s	file:
+linkNode	LinkNode/LinkNode.c	/^}linkNode;$/;"	t	typeref:struct:linkNode	file:
+linklistErase	LinkNode/LinkNode.c	/^void linklistErase(linkNode** head,linkNode**  pos)$/;"	f
+lisadnkListPushFront	LinkNode/LinkNode.c	/^void  lisadnkListPushFront(linkNode** head,eleType c)$/;"	f
+main	BST/c.cpp	/^int main()$/;"	f
+main	BST/test.cpp	/^int main()$/;"	f
+main	LinkNode/NULL.c	/^int main()$/;"	f
+main	LinkNode/test.c	/^int main()$/;"	f
+main	SeqList/test.cpp	/^int main()$/;"	f
+main	sort/insertion.c	/^int main()$/;"	f
+main	sort/selection.c	/^int main()$/;"	f
+main	sort/shell.c	/^int main()$/;"	f
+merge	LinkNode/test.c	/^linkNode* merge(linkNode* head1, linkNode *head2)$/;"	f
+next	LinkNode/LinkNode.c	/^    struct linkNode* next;$/;"	m	struct:linkNode	typeref:struct:linkNode::linkNode	file:
+p	SeqList/test.cpp	5;"	d	file:
+printReverse	LinkNode/LinkNode.c	/^void printReverse(linkNode* head)$/;"	f
+put	BST/tree.cpp	/^void BST::put(key_t key, val_t val)$/;"	f	class:BST
+put1	BST/tree.cpp	/^Node* BST::put1(Node* x, key_t key, val_t val)$/;"	f	class:BST
+put2	BST/tree.cpp	/^Node* BST::put2(Node* input, key_t key, val_t val)$/;"	f	class:BST
+remove	SeqList/SeqList.cpp	/^int SeqList::remove(int key)$/;"	f	class:SeqList
+right	BST/tree.h	/^	struct Node* right;$/;"	m	struct:Node	typeref:struct:Node::Node
+root	BST/tree.h	/^	Node* root;$/;"	m	class:BST
+s	SeqList/test.cpp	/^SeqList s;$/;"	v
+select	BST/tree.cpp	/^Node* BST::select(Node *x,int t)$/;"	f	class:BST
+select	BST/tree.cpp	/^key_t BST::select(int rank)$/;"	f	class:BST
+show	BST/tree.cpp	/^void BST::show()$/;"	f	class:BST
+show	LinkNode/test.c	2;"	d	file:
+show	sort/sort.h	/^int show(int *a,int length)$/;"	f
+showSeqList	SeqList/SeqList.cpp	/^void SeqList::showSeqList()$/;"	f	class:SeqList
+size	BST/tree.cpp	/^size_t BST::size(Node *x)$/;"	f	class:BST
+size	LinkNode/LinkNode.c	/^   size_t  size;$/;"	m	struct:link	file:
+size	SeqList/SeqList.h	/^	SeqListtype size;$/;"	m	class:SeqList
+sort	sort/insertion.c	/^void sort (int *a,int length)$/;"	f
+sort	sort/shell.c	/^void sort(int *a,int length)$/;"	f
+tail	LinkNode/LinkNode.c	/^   linkNode* tail;$/;"	m	struct:link	file:
+tesetmerge	LinkNode/test.c	/^void tesetmerge()$/;"	f
+testEarse	LinkNode/test.c	/^void testEarse()$/;"	f
+testFindMidNode	LinkNode/test.c	/^void testFindMidNode()$/;"	f
+testFront	SeqList/test.cpp	/^void testFront()$/;"	f
+testHasCycle	LinkNode/test.c	/^void testHasCycle(linkNode* head)$/;"	f
+testInsert_Remove	SeqList/test.cpp	/^void testInsert_Remove()$/;"	f
+testLastKnode	LinkNode/test.c	/^void testLastKnode()$/;"	f
+testPushBack	LinkNode/test.c	/^void testPushBack()$/;"	f
+testPushBack	SeqList/test.cpp	/^void testPushBack()$/;"	f
+testPushFront	LinkNode/test.c	/^void testPushFront()$/;"	f
+testReverse	LinkNode/test.c	/^void testReverse()$/;"	f
+test_findEntry	LinkNode/test.c	/^void test_findEntry()$/;"	f
+test_getCrossPoint	LinkNode/test.c	/^void test_getCrossPoint()$/;"	f
+test_getCrossPoint_noncycle	LinkNode/test.c	/^void test_getCrossPoint_noncycle()$/;"	f
+test_hasCross	LinkNode/test.c	/^void test_hasCross()$/;"	f
+test_unionLinkList	LinkNode/test.c	/^void test_unionLinkList()$/;"	f
+testfind	LinkNode/test.c	/^void testfind()$/;"	f
+testinitLink	LinkNode/test.c	/^void testinitLink()$/;"	f
+testinsert	LinkNode/test.c	/^void testinsert()$/;"	f
+unionLinkList	LinkNode/test.c	/^linkNode* unionLinkList(linkNode* head1, linkNode* head2)$/;"	f
+val	BST/tree.h	/^	val_t val;$/;"	m	struct:Node
+val_t	BST/tree.h	/^typedef int val_t;$/;"	t
+~SeqList	SeqList/SeqList.h	/^	~SeqList(){  }$/;"	f	class:SeqList
