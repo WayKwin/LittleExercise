@@ -6,7 +6,6 @@
 //加入动态扩容
 #define SeqQueueMaxSize 100
 typedef char SeqQueueType;
-//tail永远指向下一个可以被使用的元素
 typedef struct SeqQueue
 {
     SeqQueueType* data;

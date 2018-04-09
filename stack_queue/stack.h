@@ -10,7 +10,7 @@ typedef struct seqStack
 void SeqStackInit(SeqStack* stack);
 void SeqStackDestroy(SeqStack* stack);
 void SeqStackPush(SeqStack* stack,SeqStackType val);
-void SeqStackPop(SeqStack* stack);
+void SeqStackPop(SeqStack* stack,SeqStackType* ret);
 //成功失败,返回value
 int SeqStackTop(SeqStack* stack,SeqStackType* value);
 typedef char LinkStackType;

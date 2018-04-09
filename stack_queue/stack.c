@@ -50,13 +50,13 @@ void SeqStackPush(SeqStack* stack,SeqStackType val)
     }
     stack->data[stack->size++] = val;
 }
-void SeqStackPop(SeqStack* stack)
+void SeqStackPop(SeqStack* stack,SeqStackType* ret)
 {
     if( stack == NULL )
         return;
     if(stack->size == 0 )
         return;
-    --stack->size;
+    *ret = stack->data[--stack->size];
 }
 int SeqStackTop(SeqStack* stack,SeqStackType* value)
 {
