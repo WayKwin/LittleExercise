@@ -189,6 +189,61 @@ int StackOrder(char src[],size_t src_size,char dst[],size_t dst_size)
     return 0;
 
 }
+/*=====================================================
+ * 共享栈
+ * 一个数组两个栈
+ */
+#define Max_Size_Stack_Arry 100
+typedef struct stackByarry
+{
+    int data[Max_Size_Stack_Arry];
+    int stack1_base;
+    int stack2_base;
+    int comm_top;
+}StackArray;
+void StackArryInit(StackArray* s)
+{
+    if( s == NULL )
+        return;
+    s->stack1_base = 0;
+    s->stack2_base = Max_Size_Stack_Arry - 1;
+    s->comm_top = Max_Size_Stack_Arry / 2;
+}
+void Stack1Push(StackArray* s, int val)
+{
+    if( s == NULL )
+        return;
+    if(s->stack1_base == s->comm_top )
+        return;
+    s->data[s->stack1_base++] = val;
+}
+void Stack2Push(StackArray* s, int val)
+{
+    if( s == NULL )
+        return;
+    if(s->stack2_base == s->comm_top - 1)
+        return;
+    s->data[s->stack1_base--] = val;
+
+}
+void Stack1Pop(StackArray*s)
+{
+    if( s == NULL )
+        return;
+    if(s->stack1_base  ==  0 )
+        return;
+    --s->stack1_base;
+}
+void Stack2Pop(StackArray* s)
+{
+    if( s == NULL )
+        return;
+    if(s->stack2_base  == Max_Size_Stack_Arry - 1  )
+        return;
+    ++s->stack2_base;
+
+}
+
 #include<string.h>
 int main()
 {
