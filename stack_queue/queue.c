@@ -73,12 +73,13 @@ void SeqQueuePush(SeqQueue* queue,SeqQueueType val)
     //当head和tail再次相与时 size 就满了
     queue->size++;
 }
-void SeqQueuePop(SeqQueue* queue)
+void SeqQueuePop(SeqQueue* queue,SeqQueueType* ret)
 {
     if( queue == NULL )
         return;
     if(queue->size == 0)
         return;
+    *ret = queue->data[queue->head];
     if(queue->head == queue->capacity -1)
     {
         queue->head = 0;
@@ -96,9 +97,8 @@ void test()
     SeqQueuePush(&q,'a');
     SeqQueuePush(&q,'b');
     SeqQueuePush(&q,'c');
-
     printf("tail:exc: 0 act: %d,size:%d\n",q.tail,q.size);
-    SeqQueuePop(&q);
+    SeqQueuePop(&q,NULL);
     SeqQueuePush(&q,'d');
     printf("tail exp:1 act:%d,head exp: 1,act %d\n",q.tail,q.head);
     printf("now size:exc: 3  act:%d capacity: exc 7,act %d\n",q.size,q.capacity);
@@ -152,7 +152,7 @@ void  LinkQueuePop(LinkQueue* queue)
     if(queue->head->next == NULL)
     {
         //删完队列 ,尾指针归位
-        queue->tail = head;
+        queue->tail = queue->head;
     }
     to_delete = NULL;
 }
@@ -173,9 +173,11 @@ void testLink()
     printf("%c\n",q.head->next->data);
     LinkQueueDestroy(&q);
 }
+#if 0
 int main()
 {
 
     testLink();
     return 0;
 }
+#endif

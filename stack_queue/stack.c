@@ -56,7 +56,10 @@ void SeqStackPop(SeqStack* stack,SeqStackType* ret)
         return;
     if(stack->size == 0 )
         return;
+    if(ret != NULL)
     *ret = stack->data[--stack->size];
+    else
+    stack->size--;
 }
 int SeqStackTop(SeqStack* stack,SeqStackType* value)
 {
@@ -106,8 +109,10 @@ void LinkStackPop(LinkStack** stack)
     to_pop = NULL;
 }
 
+#if 0
 int main()
 {
     LinkStack* frist = NULL;
     LinkStackPush(&frist,'a');
 }
+#endif

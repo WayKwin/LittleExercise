@@ -24,7 +24,7 @@ void SeqQueueDestroy(SeqQueue* queue);
 //
 // if(q->head > Maxsize) head = 0
 void SeqQueuePush(SeqQueue* queue,SeqQueueType val);
-void SeqQueuePop(SeqQueue* queue);
+void SeqQueuePop(SeqQueue* queue,SeqQueueType* ret);
 //------------------------------------------------------------
 typedef char NodeType;
 typedef struct  Node
