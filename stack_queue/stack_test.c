@@ -199,7 +199,6 @@ typedef struct stackByarry
     int data[Max_Size_Stack_Arry];
     int stack1_base;
     int stack2_base;
-    int comm_top;
 }StackArray;
 void StackArryInit(StackArray* s)
 {
@@ -207,13 +206,12 @@ void StackArryInit(StackArray* s)
         return;
     s->stack1_base = 0;
     s->stack2_base = Max_Size_Stack_Arry - 1;
-    s->comm_top = Max_Size_Stack_Arry / 2;
 }
 void Stack1Push(StackArray* s, int val)
 {
     if( s == NULL )
         return;
-    if(s->stack1_base == s->comm_top )
+    if(s->stack1_base == s->stack2_base - 1 )
         return;
     s->data[s->stack1_base++] = val;
 }
@@ -221,7 +219,7 @@ void Stack2Push(StackArray* s, int val)
 {
     if( s == NULL )
         return;
-    if(s->stack2_base == s->comm_top - 1)
+    if(s->stack2_base == s->stack1_base - 1)
         return;
     s->data[s->stack1_base--] = val;
 
